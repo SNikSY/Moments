@@ -1,0 +1,17 @@
+.moment {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.likes {
+  color: #ff6600;
+}
+
+.comments {
+  margin-top: 10px;
+}
+
+.comments h3 {
+  margin-bottom: 5px;
+}

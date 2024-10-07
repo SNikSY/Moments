@@ -1,0 +1,16 @@
+<h1><%= @moment.user.username %>'s Moment</h1>
+<p><%= @moment.content %></p>
+<p><small>Создано: <%= @moment.created_at.strftime('%d %B %Y, %H:%M') %></small></p>
+
+<div class="likes">
+  <p>Лайки: <%= @moment.likes.count %></p>
+</div>
+
+<div class="comments">
+  <h3>Комментарии:</h3>
+  <% @moment.comments.each do |comment| %>
+    <p><strong><%= comment.user.username %>:</strong> <%= comment.content %></p>
+  <% end %>
+</div>
+
+<%= link_to 'Вернуться на главную', root_path %>
