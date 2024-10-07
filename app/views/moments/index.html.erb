@@ -2,8 +2,8 @@
 
 <% @moments.each do |moment| %>
   <div class="moment">
-    <h2><%= link_to moment.user.username, moment_path(moment) %></h2> <!-- Ссылка на момент -->
-    <p><%= truncate(moment.content, length: 100) %></p> <!-- Сокращённый текст момента -->
+    <h2><%= link_to moment.user.username, user_path(moment.user) %></h2> <!-- Ссылка на пользователя -->
+    <p><%= truncate(moment.content, length: 100) %></p>
     <p><small>Создано: <%= moment.created_at.strftime('%d %B %Y, %H:%M') %></small></p>
 
     <div class="likes">
@@ -20,3 +20,7 @@
   </div>
   <hr>
 <% end %>
+
+<div class="notifications">
+  <%= link_to 'Мои уведомления', notifications_path %> <!-- Ссылка на уведомления -->
+</div>

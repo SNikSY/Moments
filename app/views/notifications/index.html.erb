@@ -1,0 +1,13 @@
+<h1>Уведомления</h1>
+
+<% @notifications.each do |notification| %>
+  <div class="notification">
+    <p><%= notification.message %> (<%= notification.created_at.strftime('%d %B %Y, %H:%M') %>)</p>
+    <% if notification.moment %>
+      <p><%= link_to 'Просмотр момента', moment_path(notification.moment) %></p>
+    <% end %>
+  </div>
+  <hr>
+<% end %>
+
+<%= link_to 'Вернуться на главную', root_path %>
